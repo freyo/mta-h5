@@ -5,7 +5,7 @@ PHP SDK for Mobile Tencent Analytics HTML5
 ## Installation
 
   ```shell
-  composer require freyo/mat-h5
+  composer require freyo/mta-h5
   ```
 
 ## Bootstrap
