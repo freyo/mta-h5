@@ -1,3 +1,6 @@
+# Mobile Tencent Analytics HTML5
+
+PHP SDK for Mobile Tencent Analytics HTML5
 
 ## Installation
 
@@ -24,7 +27,6 @@
 ### API
 
 ```php
-
 $app->trend->query($startDate, $endDate);
 $app->trend->realtime();
 $app->trend->heartbeat();
@@ -51,7 +53,6 @@ $app->source->land($startDate, $endDate, $urls);
 $app->source->leave($startDate, $endDate, $urls);
 
 $app->adtag->query($startDate, $endDate, $adTags);
-
 ```
 
 ## Use in Laravel
