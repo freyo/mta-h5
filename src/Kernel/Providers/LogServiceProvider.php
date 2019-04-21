@@ -34,11 +34,11 @@ class LogServiceProvider implements ServiceProviderInterface
         if (empty($app['config']->get('log'))) {
             return [
                 'log' => [
-                    'default' => 'errorlog',
+                    'default'  => 'errorlog',
                     'channels' => [
                         'errorlog' => [
                             'driver' => 'errorlog',
-                            'level' => 'debug',
+                            'level'  => 'debug',
                         ],
                     ],
                 ],
@@ -49,12 +49,12 @@ class LogServiceProvider implements ServiceProviderInterface
         if (empty($app['config']->get('log.driver'))) {
             return [
                 'log' => [
-                    'default' => 'single',
+                    'default'  => 'single',
                     'channels' => [
                         'single' => [
                             'driver' => 'single',
-                            'path' => $app['config']->get('log.file') ?: \sys_get_temp_dir().'/logs/midas.log',
-                            'level' => $app['config']->get('log.level', 'debug'),
+                            'path'   => $app['config']->get('log.file') ?: \sys_get_temp_dir().'/logs/midas.log',
+                            'level'  => $app['config']->get('log.level', 'debug'),
                         ],
                     ],
                 ],
@@ -65,7 +65,7 @@ class LogServiceProvider implements ServiceProviderInterface
 
         return [
             'log' => [
-                'default' => $name,
+                'default'  => $name,
                 'channels' => [
                     $name => $app['config']->get('log'),
                 ],

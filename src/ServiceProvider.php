@@ -14,7 +14,7 @@ class ServiceProvider extends LaravelServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(
-            __DIR__ . '/../config/mta-h5.php', 'services.mta-h5'
+            __DIR__.'/../config/mta-h5.php', 'services.mta-h5'
         );
 
         $this->app->singleton('mta-h5', function ($app) {

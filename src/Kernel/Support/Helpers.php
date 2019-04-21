@@ -5,7 +5,7 @@ namespace Freyo\MtaH5\Kernel\Support;
 /**
  * Generate a signature.
  *
- * @param array $params
+ * @param array  $params
  * @param string $secretKey
  *
  * @return string
@@ -15,7 +15,7 @@ function generate_sign(array $params, $secretKey)
     ksort($params);
 
     foreach ($params as $key => $value) {
-        $secretKey .= $key . '=' . $value;
+        $secretKey .= $key.'='.$value;
     }
 
     return md5($secretKey);
@@ -71,7 +71,7 @@ function current_url()
         $protocol = 'https://';
     }
 
-    return $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+    return $protocol.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 }
 
 /**

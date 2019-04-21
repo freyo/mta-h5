@@ -8,7 +8,7 @@ use GuzzleHttp\ClientInterface;
 use GuzzleHttp\HandlerStack;
 
 /**
- * Trait HasHttpRequests
+ * Trait HasHttpRequests.
  */
 trait HasHttpRequests
 {
@@ -126,7 +126,7 @@ trait HasHttpRequests
      */
     public function request($url, $method = 'GET', $options = [])
     {
-        $method  = strtoupper($method);
+        $method = strtoupper($method);
 
         $options = array_merge(self::$defaults, $options, ['handler' => $this->getHandlerStack()]);
 
@@ -150,6 +150,7 @@ trait HasHttpRequests
     public function setHandlerStack(HandlerStack $handlerStack)
     {
         $this->handlerStack = $handlerStack;
+
         return $this;
     }
 

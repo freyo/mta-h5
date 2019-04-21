@@ -2,7 +2,6 @@
 
 namespace Freyo\MtaH5;
 
-use Closure;
 use Freyo\MtaH5\Kernel\ServiceContainer;
 
 /**

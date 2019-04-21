@@ -3,11 +3,11 @@
 namespace Freyo\MtaH5\Kernel;
 
 use Freyo\MtaH5\Kernel\Http\Response;
-use function Freyo\MtaH5\Kernel\Support\generate_sign;
 use Freyo\MtaH5\Kernel\Traits\HasHttpRequests;
 use GuzzleHttp\MessageFormatter;
 use GuzzleHttp\Middleware;
 use Psr\Http\Message\ResponseInterface;
+use function Freyo\MtaH5\Kernel\Support\generate_sign;
 
 class BaseClient
 {
@@ -32,7 +32,7 @@ class BaseClient
      */
     public function __construct(ServiceContainer $app)
     {
-        $this->app     = $app;
+        $this->app = $app;
         $this->baseUri = $this->getBaseUri();
 
         $this->setHttpClient($this->app['http_client']);
@@ -44,9 +44,9 @@ class BaseClient
      * @param string $url
      * @param array  $query
      *
-     * @return \Psr\Http\Message\ResponseInterface|\Freyo\MtaH5\Kernel\Support\Collection|array|object|string
-     *
      * @throws \Freyo\MtaH5\Kernel\Exceptions\InvalidConfigException
+     *
+     * @return \Psr\Http\Message\ResponseInterface|\Freyo\MtaH5\Kernel\Support\Collection|array|object|string
      */
     public function httpGet($url, array $query = [])
     {
@@ -62,9 +62,9 @@ class BaseClient
      * @param string $url
      * @param array  $data
      *
-     * @return \Psr\Http\Message\ResponseInterface|\Freyo\MtaH5\Kernel\Support\Collection|array|object|string
-     *
      * @throws \Freyo\MtaH5\Kernel\Exceptions\InvalidConfigException
+     *
+     * @return \Psr\Http\Message\ResponseInterface|\Freyo\MtaH5\Kernel\Support\Collection|array|object|string
      */
     public function httpPost($url, array $data = [])
     {
@@ -78,9 +78,9 @@ class BaseClient
      * @param string|array $data
      * @param array        $query
      *
-     * @return \Psr\Http\Message\ResponseInterface|\Freyo\MtaH5\Kernel\Support\Collection|array|object|string
-     *
      * @throws \Freyo\MtaH5\Kernel\Exceptions\InvalidConfigException
+     *
+     * @return \Psr\Http\Message\ResponseInterface|\Freyo\MtaH5\Kernel\Support\Collection|array|object|string
      */
     public function httpPostJson($url, array $data = [], array $query = [])
     {
@@ -95,9 +95,9 @@ class BaseClient
      * @param array  $form
      * @param array  $query
      *
-     * @return \Psr\Http\Message\ResponseInterface|\Freyo\MtaH5\Kernel\Support\Collection|array|object|string
-     *
      * @throws \Freyo\MtaH5\Kernel\Exceptions\InvalidConfigException
+     *
+     * @return \Psr\Http\Message\ResponseInterface|\Freyo\MtaH5\Kernel\Support\Collection|array|object|string
      */
     public function httpUpload($url, array $files = [], array $form = [], array $query = [])
     {
@@ -105,7 +105,7 @@ class BaseClient
 
         foreach ($files as $name => $path) {
             $multipart[] = [
-                'name' => $name,
+                'name'     => $name,
                 'contents' => fopen($path, 'r'),
             ];
         }
@@ -124,9 +124,9 @@ class BaseClient
      * @param string $method
      * @param array  $options
      *
-     * @return ResponseInterface
-     *
      * @throws \Freyo\MtaH5\Kernel\Exceptions\InvalidConfigException
+     *
+     * @return ResponseInterface
      */
     public function requestRaw($url, $method = 'GET', array $options = [])
     {
@@ -141,9 +141,9 @@ class BaseClient
      * @param array  $options
      * @param bool   $returnRaw
      *
-     * @return \Psr\Http\Message\ResponseInterface|\Freyo\MtaH5\Kernel\Support\Collection|array|object|string
-     *
      * @throws \Freyo\MtaH5\Kernel\Exceptions\InvalidConfigException
+     *
+     * @return \Psr\Http\Message\ResponseInterface|\Freyo\MtaH5\Kernel\Support\Collection|array|object|string
      */
     public function request($url, $method = 'GET', array $options = [], $returnRaw = false)
     {
