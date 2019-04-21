@@ -1,5 +1,7 @@
 {
     "name": "freyo/mta-h5",
+    "description": "PHP SDK for Mobile Tencent Analytics HTML5",
+    "keywords": ["mta", "mobile-tencent-analytics"],
     "license": "MIT",
     "authors": [
         {
@@ -30,6 +32,13 @@
     "autoload-dev":{
         "psr-4":{
             "Tests\\":"tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Freyo\\MtaH5\\ServiceProvider"
+            ]
         }
     }
 }
