@@ -2,12 +2,12 @@
 
 namespace Freyo\MtaH5\Kernel\Traits;
 
+use Freyo\MtaH5\Kernel\Contracts\Arrayable;
 use Freyo\MtaH5\Kernel\Exceptions\InvalidArgumentException;
 use Freyo\MtaH5\Kernel\Exceptions\InvalidConfigException;
 use Freyo\MtaH5\Kernel\Http\Response;
-use Freyo\MtaH5\Kernel\Contracts\Arrayable;
-use Psr\Http\Message\ResponseInterface;
 use Freyo\MtaH5\Kernel\Support\Collection;
+use Psr\Http\Message\ResponseInterface;
 
 /**
  * Trait ResponseCastable.
@@ -18,9 +18,9 @@ trait ResponseCastable
      * @param \Psr\Http\Message\ResponseInterface $response
      * @param string|null                         $type
      *
-     * @return array|\Freyo\MtaH5\Kernel\Support\Collection|object|\Psr\Http\Message\ResponseInterface|string
-     *
      * @throws \Freyo\MtaH5\Kernel\Exceptions\InvalidConfigException
+     *
+     * @return array|\Freyo\MtaH5\Kernel\Support\Collection|object|\Psr\Http\Message\ResponseInterface|string
      */
     protected function castResponseToType(ResponseInterface $response, $type = null)
     {
@@ -52,10 +52,10 @@ trait ResponseCastable
      * @param mixed       $response
      * @param string|null $type
      *
-     * @return array|\Freyo\MtaH5\Kernel\Support\Collection|object|\Psr\Http\Message\ResponseInterface|string
-     *
      * @throws \Freyo\MtaH5\Kernel\Exceptions\InvalidArgumentException
      * @throws \Freyo\MtaH5\Kernel\Exceptions\InvalidConfigException
+     *
+     * @return array|\Freyo\MtaH5\Kernel\Support\Collection|object|\Psr\Http\Message\ResponseInterface|string
      */
     protected function detectAndCastResponseToType($response, $type = null)
     {

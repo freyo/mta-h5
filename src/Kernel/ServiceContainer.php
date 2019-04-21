@@ -11,7 +11,7 @@ use Pimple\Container;
 
 class ServiceContainer extends Container
 {
-     /**
+    /**
      * @var array
      */
     protected $providers = [];
@@ -29,15 +29,15 @@ class ServiceContainer extends Container
     /**
      * Constructor.
      *
-     * @param array       $config
-     * @param array       $prepends
+     * @param array $config
+     * @param array $prepends
      */
     public function __construct(array $config = [], array $prepends = [])
     {
         $this->registerProviders($this->getProviders());
-        
+
         parent::__construct($prepends);
-        
+
         $this->userConfig = $config;
     }
 
@@ -56,7 +56,7 @@ class ServiceContainer extends Container
             BaseClientServiceProvider::class,
         ], $this->providers);
     }
-    
+
     /**
      * @param array $providers
      */
@@ -106,7 +106,7 @@ class ServiceContainer extends Container
         $base = [
             // http://docs.guzzlephp.org/en/stable/request-options.html
             'http' => [
-                'timeout' => 5.0,
+                'timeout'  => 5.0,
                 'base_uri' => 'https://mta.qq.com/h5/api/',
             ],
         ];
