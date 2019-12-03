@@ -2,6 +2,20 @@
 
 PHP SDK for Mobile Tencent Analytics HTML5
 
+<div>
+  <p align="">
+    <a href="LICENSE">
+      <image src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="Software License">
+    </a>
+    <a href="https://scrutinizer-ci.com/g/freyo/mta-h5">
+      <image src="https://img.shields.io/scrutinizer/g/freyo/mta-h5.svg?style=flat-square" alt="Quality Score">
+    </a>
+    <a href="https://packagist.org/packages/freyo/mta-h5">
+      <image src="https://img.shields.io/packagist/v/freyo/mta-h5.svg?style=flat-square" alt="Packagist Version">
+    </a>
+  </p>
+</div>
+
 ## Installation
 
   ```shell
